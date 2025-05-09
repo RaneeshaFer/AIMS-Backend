@@ -16,9 +16,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/user',userRouter)
 
-app.get('/',()=>{
-    console.log("HI AIMS");
-})
+//app.get('/',()=>{
+   // console.log("HI AIMS");
+//})
 app.use((req,res,next)=>{
     let token=req.header("Authorization")
     
