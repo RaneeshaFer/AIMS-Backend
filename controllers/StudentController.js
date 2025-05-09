@@ -43,7 +43,7 @@ export async function postStudent(req,res){
 
 export async function deleteStudent(req,res){
 
-    if(req.user==null){
+    if(!req.user){
         res.json({msg:"Please Login First"});
         return
     }
@@ -62,20 +62,22 @@ export async function deleteStudent(req,res){
 }
 
 export async function updateStudent(req,res){
-    // const id=req.params.sid;
+    //const id=req.params.sid;
+    //console.log(req.params.sid)
     // res.json({id:id})
-    if(req.user==null){
+    if(!req.user){
         res.json({msg:"Please Login First"});
         return
     }
     if(req.user.role!="Admin"){
-        res,json({msg:"You are not admin"})
+        res.json({msg:"You are not admin"});
     }
 
 
     try {
         const id=req.params.sid;
         const data=req.body;
+        //console.log(data)
         await Student.updateOne({sid:id},data).then(()=>{
             res.json({msg:"Data Updated"})
         }).catch((err)=>{
