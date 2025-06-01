@@ -55,7 +55,7 @@ export async function deleteStudent(req,res){
     const id=req.params.sid;
     // console.log(id);
     await Student.deleteOne({sid:id}).then(()=>{
-        res.json({msg:'Data Deleted'})
+        res.json({msg:'Student Deleted'})
     }).catch((err)=>{
         res.json({msg:'err.message'});
     });

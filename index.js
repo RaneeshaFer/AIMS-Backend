@@ -8,6 +8,10 @@ import teacherRouter from './routes/teacherRoute.js';
 import userRouter from './routes/userRoute.js';
 import jwt from 'jsonwebtoken';
 import cors from'cors';
+import customerRouter from './routes/customerRoute.js';
+import appointmentRouter from './routes/appointmentRoute.js';
+import itemRouter from './routes/itemRoute.js';
+import orderRouter from './routes/orderRoute.js';
 
 
 dotenv.config();
@@ -53,6 +57,10 @@ app.listen(3000,()=>{
 })
 
 app.use('/api/student',studentRouter)
+app.use('/api/customer',customerRouter)
+app.use('/api/appointment',appointmentRouter)
+app.use('/api/item',itemRouter)
+app.use('/api/order',orderRouter)
 app.use('/api/teacher',teacherRouter)
 
 

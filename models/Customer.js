@@ -1,21 +1,26 @@
+
 import mongoose from "mongoose";
 
-const studentSchema=new mongoose.Schema({
-    sid:{
+const customerSchema=new mongoose.Schema({
+    cid:{
         type:String,
         required:true,
         unique:true
     },
-    sname:{
+    cname:{
         type:String,
         required:true
     },
-    age:{
-        type:Number,
+    address:{
+        type:String,
         required:true
     },
     dob:{
         type:Date,
+        required:true
+    },
+    telephone:{
+        type:Number,
         required:true
     },
     image:{
@@ -25,6 +30,6 @@ const studentSchema=new mongoose.Schema({
     }
 
 })
-const Student=mongoose.model("student",studentSchema)
+const Customer=mongoose.model("customer",customerSchema)
 
-export default Student
+export default Customer
