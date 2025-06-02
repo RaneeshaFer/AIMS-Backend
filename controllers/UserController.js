@@ -16,11 +16,6 @@ export function registerUser(req,res){
             res.json({msg:err.message})
         })
 
-
-
-    
-    
-
 }
 export function loginUser(req,res){
     const data=req.body;
